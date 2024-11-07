@@ -1,7 +1,6 @@
 import React from 'react'
 import { SafeAreaView } from 'react-native';
 import { View, Text, StyleSheet, Image, StatusBar } from 'react-native';
-import BottomTab from '../components/BottomTab';
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>

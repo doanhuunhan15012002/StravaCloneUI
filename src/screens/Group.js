@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import Paragraph from '../components/Paragraph'
 import Button from '../components/Button'
 import { Alert, SafeAreaView, StyleSheet, Text } from 'react-native'
-import { theme } from '../core/theme'
+
 
 export default function Group({ navigation, title }) {
   return (
@@ -16,7 +16,7 @@ export default function Group({ navigation, title }) {
         mode="inlined"
         style={styles.button}
         onPress={() =>
-          alert('Con cá')
+          navigation.navigate("OnboardingScreen")
         }
       >
         <Text 

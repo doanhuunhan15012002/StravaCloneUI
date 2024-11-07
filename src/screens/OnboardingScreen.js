@@ -11,7 +11,7 @@ export default function OnboardingScreen(props) {
     const handleDone = ()=>{
         navigation.reset({
             index: 0,
-            routes: [{ name: 'BottomTab' }],
+            routes: [{ name: 'Event' }],
           })
     }
     const doneButton = ({...props})=>{

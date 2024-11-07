@@ -1,11 +1,19 @@
 // src/components/Header.js
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default function Header({ title }) {
+export default function Header({ title, showBackButton, navigation }) {
   return (
     <View style={styles.headerContainer}>
+      
+      {/* Back Button */}
+      {showBackButton && (
+        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+          <Icon name="arrow-back-outline" size={24} color="#000" />
+        </TouchableOpacity>
+      )}
+      
       {/* Title */}
       <Text style={styles.title}>{title}</Text>
       
@@ -17,7 +25,6 @@ export default function Header({ title }) {
         
         <TouchableOpacity style={styles.iconButton}>
           <Icon name="notifications-outline" size={24} color="#000" />
-          {/* Notification Badge */}
           <View style={styles.badge}>
             <Text style={styles.badgeText}>20</Text>
           </View>
@@ -31,23 +38,26 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingVertical: 10,
     backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
   },
+  backButton: {
+    marginRight: 10,
+  },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#000',
+    flex: 1,
+    textAlign: 'center',
   },
   iconsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    position: 'absolute',
-    right: 16,
   },
   iconButton: {
     marginLeft: 15,

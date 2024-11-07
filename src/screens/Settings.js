@@ -8,7 +8,7 @@ import {
     SafeAreaView,
     StyleSheet,
 } from 'react-native'
-import { colors, fontSizes } from '../constants'
+
 import Header from '../components/Header';
 import Icon from 'react-native-vector-icons/FontAwesome5'
 function Settings(props) {
@@ -24,7 +24,7 @@ function Settings(props) {
         backgroundColor: 'white'
     }}>
         <Header
-            title={'Privacy and settings'}
+            title={'Settings'}
             leftIconName='chevron-left'
             onPressLeftIcon={() => navigation.goBack()}
         />
